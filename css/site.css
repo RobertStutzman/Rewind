@@ -53,3 +53,9 @@ footer .social>a:hover {
 .cssicon {
     color: #264de4;
 }
+code[class*="language-"],
+pre[class*="language-"] {
+white-space: pre-wrap;
+word-break: break-all;
+word-wrap: break-word;
+}

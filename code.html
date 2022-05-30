@@ -13,6 +13,7 @@
      <link rel="stylesheet" href="/css/site.css">
      <link rel="shortcut icon" href="/img/favicon-32x32.png" type="image/x-icon">
      <script src="https://kit.fontawesome.com/298818b391.js" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="/css/prism.css">
     
 </head>
 
@@ -48,13 +49,50 @@
 </nav>
 <main class="flex-shrink-0">
     <div class="container px-5 py-5">
-            <h2 class="border-1 border-bottom border-dark py-3">The Code for REWIND.</h2>
+            <h2 class="border-1 border-bottom border-dark py-3 text-dark">The Code for REWIND.</h2>
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="col-lg-8">
                 <div>
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            <!--COPY JS CODE IN HERE-->
+                            //Get the string from the page
+                            //controller function
+                            function getValue(){
+                            
+                                document.getElementById("alert").classList.add("invisible");
+                            
+                                let userString = document.getElementById("userString").value;
+                            
+                                let revString = reverseString(userString);
+                            
+                                displayString(revString);
+                            }
+                            
+                            //Reverse the string
+                            //logic function
+                            function reverseString(userString){
+                            
+                                let revString = [];
+                            
+                                //reverse a strong using a for loop
+                                for (let index = userString.length - 1; index >= 0; index--) {
+                                    revString += userString[index];
+                                    
+                                }
+                            
+                                return revString;
+                            }
+                            
+                            //Display our message with reversed string to the user
+                            //View function
+                            function displayString(revString){
+                            
+                                //write to the page
+                                document.getElementById("msg").innerHTML = `Your word reversed is ${revString}`;
+                                //turn on the alert box
+                                document.getElementById("alert").classList.remove("invisible");
+                            
+                            }
                         </code>
                     </pre>
                 </div>
@@ -104,5 +142,8 @@
         'right-trim': true
         })
         </script>
+        <script src="/js/site.js"></script>
+        <script src="/js/prism.js"></script>
+       
 </body>
 </html>
